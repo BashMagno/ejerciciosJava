@@ -40,8 +40,7 @@ public class ejerciciosCiclica
 						num1 = read.nextInt();
 						res = ans + num1;
 						System.out.println("El resultado de la operacion es: " + ans + " + " + num1 + " = " + res + "\n");
-						ans += res;
-						res = 0;
+						ans = res;
 						System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 						seguir = read.nextInt();
 						if (seguir == 1) {
@@ -60,8 +59,7 @@ public class ejerciciosCiclica
 					num2 = read.nextInt();
 					res = num1 + num2;
 					System.out.println("El resultado de la operacion es: " + num1 + " + " + num2 + " = " + res + "\n");
-					ans += res;
-					res = 0;
+					ans = res;
 					System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 					seguir = read.nextInt();
 					if (seguir == 1) {
@@ -90,8 +88,7 @@ public class ejerciciosCiclica
 							num1 = read.nextInt();
 							res = num1 - ans;
 							System.out.println("El resultado de la operacion es: " + num1 + " - " + ans + " = " + res + "\n");
-							ans += res;
-							res = 0;
+							ans = res;
 							System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 							seguir = read.nextInt();
 							if (seguir == 1) {
@@ -108,8 +105,7 @@ public class ejerciciosCiclica
 							num1 = read.nextInt();
 							res = ans - num1;
 							System.out.println("El resultado de la operacion es: " + ans + " - " + num1 + " = " + res + "\n");
-							ans += res;
-							res = 0;
+							ans = res;
 							System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 							seguir = read.nextInt();
 							if (seguir == 1) {
@@ -132,8 +128,7 @@ public class ejerciciosCiclica
 					num2 = read.nextInt();
 					res = num1 - num2;
 					System.out.println("El resultado de la operacion es: " + num1 + " - " + num2 + " = " + res + "\n");
-					ans += res;
-					res = 0;
+					ans = res;
 					System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 					seguir = read.nextInt();
 						if (seguir == 1) {
@@ -161,8 +156,7 @@ public class ejerciciosCiclica
 						num1 = read.nextInt();
 						res = ans * num1;
 						System.out.println("El resultado de la operacion es: " + ans + " x " + num1 + " = " + res + "\n");
-						ans += res;
-						res = 0;
+						ans = res;
 						System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 						seguir = read.nextInt();
 						if (seguir == 1) {
@@ -181,8 +175,7 @@ public class ejerciciosCiclica
 					num2 = read.nextInt();
 					res = num1 * num2;
 					System.out.println("El resultado de la operacion es: " + num1 + " x " + num2 + " = " + res + "\n");
-					ans += res;
-					res = 0;
+					ans = res;
 					System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 					seguir = read.nextInt();
 					if (seguir == 1) {
@@ -199,20 +192,19 @@ public class ejerciciosCiclica
 //-------------------------------------------------------------------------------------------------------------------------------					
 												//FINALIZACION CASO --MULTIPLICAR--
 //-------------------------------------------------------------------------------------------------------------------------------
-				case 4://Restar
+				case 4://Dividir
 					System.out.println("¿Tienes algun resultado anterior almacenado? 1(SI) 2(NO) " );
 					resAnt = read.nextInt();
 					//CONTINUAR -SI- HAY UN RESULTADO ANTERIOR
 					if (resAnt == 1) {
-						System.out.println("Quieres que el resultado anterior reste(1) o sea restado(2)");
+						System.out.println("Quieres que el resultado anterior sea el dividendo(1) o sea el divisor(2)");
 						cond1 = read.nextInt();
 						if (cond1 == 1) {
 							System.out.println("Elige el nuevo numero: ");
 							num1 = read.nextInt();
 							res = num1 - ans;
 							System.out.println("El resultado de la operacion es: " + num1 + " - " + ans + " = " + res + "\n");
-							ans += res;
-							res = 0;
+							ans = res;
 							System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 							seguir = read.nextInt();
 							if (seguir == 1) {
@@ -229,8 +221,7 @@ public class ejerciciosCiclica
 							num1 = read.nextInt();
 							res = ans - num1;
 							System.out.println("El resultado de la operacion es: " + ans + " - " + num1 + " = " + res + "\n");
-							ans += res;
-							res = 0;
+							ans = res;
 							System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 							seguir = read.nextInt();
 							if (seguir == 1) {
@@ -253,8 +244,7 @@ public class ejerciciosCiclica
 					num2 = read.nextInt();
 					res = num1 - num2;
 					System.out.println("El resultado de la operacion es: " + num1 + " - " + num2 + " = " + res + "\n");
-					ans += res;
-					res = 0;
+					ans = res;
 					System.out.println("Quieres seguir realizando operaciones: 1(SI) 2(NO)");
 					seguir = read.nextInt();
 						if (seguir == 1) {
