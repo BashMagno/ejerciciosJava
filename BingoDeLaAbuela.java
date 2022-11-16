@@ -2,16 +2,15 @@ package ejercicios;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-//Realizado por Alejandro Higuera 
 
-public class Bingo 
-{
+ 
+public class Bingo {
  
     public static void main(String[] args) 
     {
         int bombo = 0, aux, acertar;
         boolean ordenar = true;
-        int[][] carton = new int[3][9];
+        int[][] carton = new int[4][9];
         int[] sorteo = new int[90];
         //Llamadas
         ordenar(carton);
@@ -31,22 +30,16 @@ public class Bingo
         {
             for (int j = 0; j < carton[i].length; j++) 
             {
-                if (i == 0) 
-                {
-                    if (j == 0) 
-                    {
+                if (i == 0) {
+                    if (j == 0) {
                     	carton[i][j] = ran.nextInt(7) + (10 * j) + 1;
-                    } else 
-                    {
+                    } else {
                     	carton[i][j] = ran.nextInt(8) + (10 * j);
                     }
-                } else 
-                {
-                    if (i == 1) 
-                    {
+                } else {
+                    if (i == 1) {
                         k = 0;
-                    } else if (i == 2) 
-                    {
+                    } else if (i == 2) {
                         k = 1;
                     }
                     carton[i][j] = ran.nextInt(9 + k) + (10 * j);
@@ -110,7 +103,7 @@ public class Bingo
         char opcio = ' ';
         for (int i = 0; i < sorteo.length; i++) 
         {
-        	sorteo[i] = numsRepetits(sorteo);
+        	sorteo[i] = numsRepetidos(sorteo);
         }
         //Imprimimos los numeros del bingo
         for (int i = 0; i < sorteo.length; i++) 
@@ -161,7 +154,7 @@ public class Bingo
         System.out.println();
     }
  
-    public static int numsRepetits(int[] sorteo) 
+    public static int numsRepetidos(int[] sorteo) 
     {
  
         Random ran = new Random();
@@ -185,13 +178,14 @@ public class Bingo
  
     public static void numAcierto(int num, int[][] carton) 
     {
- 
+    	String a = "X";
         for (int i = 0; i < carton.length; i++) 
         {
             for (int j = 0; j < carton[i].length; j++) 
             {
                 if (carton[i][j] == num) {
-                	carton[i][j] = -1;
+                	carton[i][j] = 0 ;
+                	
                 }
             }
         }
@@ -203,7 +197,8 @@ public class Bingo
         {
             for (int j = 0; j < carton[i].length; j++) 
             {
-                if (carton[i][j] > 0) {
+                if (carton[i][j] > 0) 
+                {
                     return false;
                 }
             }
