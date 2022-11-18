@@ -1,25 +1,31 @@
-package ejercicios;
+package pruebas;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
  
-public class Bingo {
+public class bingo 
+{
  
+	static ArrayList<Integer> listX = new ArrayList<Integer>();
+	static ArrayList<Integer> listY = new ArrayList<Integer>();
+	
     public static void main(String[] args) 
     {
         int bombo = 0, aux, acertar;
         boolean ordenar = true;
-        int[][] carton = new int[4][9];
+        int[][] carton = new int[3][9];
         int[] sorteo = new int[90];
         //Llamadas
         ordenar(carton);
         bombo = bombos(carton);
         imprimirCuadro(carton);
-        int numSorteo = sorteig_Bingo(carton, sorteo);
+        int numSorteo = sorteo_Bingo(carton, sorteo);
         mostrarUsados(sorteo, numSorteo);
         imprimirCuadro(carton);
         System.out.println("");
+        
     }
  
     public static void ordenar(int[][] carton) 
@@ -91,14 +97,23 @@ public class Bingo {
             System.out.println(""); 
             for (int j = 0; j < carton[i].length; j++) 
             {
-                System.out.printf("%3d ", carton[i][j]);
+                
+                if(listX.contains(i) && listY.contains(j))
+                {
+                	System.out.printf("  X");
+                }
+                else
+                {
+                	System.out.printf("%3d ", carton[i][j]);
+                }
             }
         }
     }
  
-    public static int sorteig_Bingo(int[][] carton, int[] sorteo) 
+    public static int sorteo_Bingo(int[][] carton, int[] sorteo) 
     {
-        Scanner ranlat = new Scanner(System.in);
+    	
+    	Scanner ranlat = new Scanner(System.in);
         Random ran = new Random();
         char opcio = ' ';
         for (int i = 0; i < sorteo.length; i++) 
@@ -113,7 +128,8 @@ public class Bingo {
             System.out.println("------------------------------------");
             System.out.println("Numero nuevo: " + sorteo[i]);
             System.out.println("Continuar? (s/n)");
- 
+            int contLinea = 0;
+        	
             do {
                 opcio = ranlat.next().charAt(0);
                 if (opcio != 's' && opcio != 'n') 
@@ -123,9 +139,25 @@ public class Bingo {
                 }
             } while (opcio != 's' && opcio != 'n');
             numAcierto(sorteo[i], carton); 
+    
             if (opcio == 's') {
                 System.out.println("");
- 
+                if (contLinea == 0)
+                {
+                	if (carton[0][0] == -1 && carton[0][1] == -1 && carton[0][2] == -1 && carton[0][3] == -1 && carton[0][4] == -1 && carton[0][5] == -1 && carton[0][6] == -1 && carton[0][7] == -1 && carton[0][8] == -1)
+                	{
+                		contLinea = 1;
+                		System.out.println("LINEAAAAAAA!!! LETS GO");
+                	}else if (carton[1][0] == -1 && carton[1][1] == -1 && carton[1][2] == -1 && carton[1][3] == -1 && carton[1][4] == -1 && carton[1][5] == -1 && carton[1][6] == -1 && carton[1][7] == -1 && carton[1][8] == -1)
+                	{
+                		contLinea = 1;
+                		System.out.println("LINEAAAAAAA!!! LETS GO");
+                	}else if (carton[2][0] == -1 && carton[2][1] == -1 && carton[2][2] == -1 && carton[2][3] == -1 && carton[2][4] == -1 && carton[2][5] == -1 && carton[2][6] == -1 && carton[2][7] == -1 && carton[2][8] == -1)
+                	{
+                		contLinea = 1;
+                		System.out.println("LINEAAAAAAA!!! LETS GO");
+                	}
+                }
                 if (comproBingo(carton) == true) 
                 {
                     System.out.println("BINGOOO!!!");
@@ -141,6 +173,7 @@ public class Bingo {
             }
             System.out.println("");
         }
+        
  
         return sorteo.length;
     }
@@ -178,19 +211,18 @@ public class Bingo {
  
     public static void numAcierto(int num, int[][] carton) 
     {
-    	String a = "X";
         for (int i = 0; i < carton.length; i++) 
         {
             for (int j = 0; j < carton[i].length; j++) 
             {
                 if (carton[i][j] == num) {
-                	carton[i][j] = 0 ;
+                	listX.add(i);
+                	listY.add(j);
                 	
                 }
             }
         }
-    }
- 
+    } 
     private static boolean comproBingo(int[][] carton) 
     {
         for (int i = 0; i < carton.length; i++) 
