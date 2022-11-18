@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class pruebasMagic1	//Clase MagicCards 
 {
 	
-	static Scanner 		read = new Scanner (System.in);
+	static Scanner 		read = new Scanner (System.in);				//PERMITE LEER INPUTS
 	
 	public static void main(String[] args) 
 	  {
@@ -29,12 +29,12 @@ public class pruebasMagic1	//Clase MagicCards
 	
 	static int 			n = 0;										//MARCA POSICIONES (iterador)
 	
-	static int 			tutorial;
+	static int 			tutorial;									//INPUT USUARIO, SI QUIERE VER EL TUTORIAL O NO
 	
-	//--------------------------------------------------------------
+//--------------------------------------------------------------
 	//ARRAYS
 	
-	static String[] 	mano = new String[5];						// AQUI ESTA LAS CARTAS QUE TIENE EL JUGADOR(LA MANO)
+	static String[] 	mano = new String[5];						//AQUI ESTA LAS CARTAS QUE TIENE EL JUGADOR(LA MANO)
 	
 	static int[]		mana = new int[5];
 																	//ESTOS CUATRO VALORES CORRESPONDEN A LOS ATRIBUTOS CON LOS QUE SE FORMAN LAS CARTAS
@@ -42,21 +42,21 @@ public class pruebasMagic1	//Clase MagicCards
 	
 	static int[] 		ataque = new int[5];
 	
-	//--------------------------------------------------------------
+//--------------------------------------------------------------
 	//VARIABLES BOOLEANAS
 	
 	static boolean 		salir = false;								//BUCLE QUE REPITE EL "MENU"
 	
-	//--------------------------------------------------------------
+//--------------------------------------------------------------
 	//VARIABLES DE TIPO STRING o CHAR
 	
 	static String 		opcion;										//VARIABLE COMO INPUT DEL USUARIO
 		
-	//-----------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------
 	
-	public static void PrimerTurno() 
-	{																// ESTE METODO SE USA UNA VEZ AL PRINCIPIO SOLO PARA ROBAR 3 CARTAS
-		
+	public static void PrimerTurno()								// ESTE METODO SE USA UNA VEZ AL PRINCIPIO SOLO PARA ROBAR 3 CARTAS
+	{																
+
 		System.out.println("TUS PRIMERAS CARTAS SON:");
 		System.out.println("");
 		
@@ -74,8 +74,8 @@ public class pruebasMagic1	//Clase MagicCards
 	
 //-----------------------------------------------------------------------------------------------------------------------------
 	
-	public static void RobarCarta() 
-	{																// ESTE METODO SE USARA CADA TURNO PARA ROBAR UNA CARTA SI HAY UN HUECO EN EL ARRAY MANO
+	public static void RobarCarta()									// ESTE METODO SE USARA CADA TURNO PARA ROBAR UNA CARTA SI HAY UN HUECO EN EL ARRAY MANO
+	{																
 
 		for ( n = 0; n < mano.length  ; n++) 
 		{
@@ -100,7 +100,7 @@ public class pruebasMagic1	//Clase MagicCards
 		
 //-----------------------------------------------------------------------------------------------------------------------------
 	
-	public static void ModoQuemar() 
+	public static void ModoQuemar()									//METODO DE LA OPCION/MODO-QUEMAR CARTA
 	{
 		
 		System.out.println("Introduce el NUMERO vinculado a la carta para QUEMARLA");
@@ -137,7 +137,7 @@ public class pruebasMagic1	//Clase MagicCards
 	
 //-----------------------------------------------------------------------------------------------------------------------------
 
-	public static void ModoNormal() 
+	public static void ModoNormal()									//METODO DEL MODO-NORMAL 
 	{
 		
 		System.out.println("Introduce el NUMERO vinculado a la carta para JUGARLA");
@@ -183,7 +183,7 @@ public class pruebasMagic1	//Clase MagicCards
 	
 //-----------------------------------------------------------------------------------------------------------------------------
 	
-	public static void ModoOverKill() 
+	public static void ModoOverKill()								//METODO DEL MODO-OVERKILL
 	{
 		
 		System.out.println("Introduce el NUMERO vinculado a la carta para JUGARLA OVERKILL");
@@ -251,11 +251,10 @@ public class pruebasMagic1	//Clase MagicCards
    	  	}
    	  	
 	}	
-   	  					
-	
+   	  						
 //-----------------------------------------------------------------------------------------------------------------------------
 	
-	public static void ModoTanque() 
+	public static void ModoTanque() 								//METODO DEL MODOTANQUE
 	{
 		
 		System.out.println("Introduce el NUMERO vinculado a la carta para JUGARLA TANQUE");
@@ -310,10 +309,9 @@ public class pruebasMagic1	//Clase MagicCards
 	 	}
 	   	
 	 }
-					   
-					  
+					   					  
 //-----------------------------------------------------------------------------------------------------------------------------
-	public static void Tutorial() 								//Metodo para mostrar las reglas o ir directamente al juego
+	public static void Tutorial() 									//METODO DE LAS REGLAS DEL JUEGO
 	{
 		System.out.println("------ BIENVENIDO A MAGIC ------");		//INTRODUCCION AL JUEGO
 		System.out.println("REALIZADO POR ALEJANDRO HIGUERA MORENO");
@@ -360,8 +358,8 @@ public class pruebasMagic1	//Clase MagicCards
 	}
 //-----------------------------------------------------------------------------------------------------------------------------
 	
-	public static void ImprimirCartas() 
-	{															//MUESTRA LAS CARTAS EN MANO
+	public static void ImprimirCartas()								//MUESTRA LAS CARTAS EN MANO
+	{															
 		for ( n = 0; n < mano.length ; n++) 
 		{
 			if(mano[n] == null) 
@@ -373,7 +371,7 @@ public class pruebasMagic1	//Clase MagicCards
 	}
 //-----------------------------------------------------------------------------------------------------------------------------
 
-	public static void Magic() 
+	public static int Magic() 										//FUNCION PRINCIPAL DEL JUEGO
 	{
 
 		Tutorial();
@@ -485,9 +483,10 @@ public class pruebasMagic1	//Clase MagicCards
 			
 		}	 
  	
+	return 0;
+		
 	} 
-	
-	
+		
 //-----------------------------------------------------------------------------------------------------------------------------
 	public static int random(int min, int max)						//FUNCION PARA SACAR LOS VALORES ALEATORIOS DE LAS CARTAS (MANA, VIDA Y ATAQUE)
 	{
@@ -496,4 +495,5 @@ public class pruebasMagic1	//Clase MagicCards
 	}
 	
 }
+
 
